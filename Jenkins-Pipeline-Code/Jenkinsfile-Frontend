@@ -91,11 +91,11 @@ pipeline {
                 GIT_USER_NAME = "nikhil007nsg"
             }
             steps {
-                dir('Kubernetes-Manifests-file/Frontend') {
+                  dir('Kubernetes-Manifests-file/Frontend') {
                     withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                         sh '''
-                            git config user.email "XXXXXXXX"
-                            git config user.name "XXXXXXXX"
+                            git config user.email "XXXXX"
+                            git config user.name "XXXXX"
                             BUILD_NUMBER=${BUILD_NUMBER}
                             echo $BUILD_NUMBER
                             imageTag=$(grep -oP '(?<=frontend:)[^ ]+' deployment.yaml)
